@@ -18,22 +18,29 @@ const Home = () => {
 		setList(list.filter((_, index) => index !== indexToRemove));
 	};
 
+	const addTask = () => setList([...list, task]);
 
 	return (
+		
 		<div className="text-center">
 
 			<div className="todoInput">
-				<input type="text" value={task} onChange={(e) => setTask(e.target.value)} />
+				<input type="text" value={task} onChange={(e) => setTask(e.target.value)} onKeyDown={(e) => {
+						if (e.key === 'Enter') {
+							addTask();
+						}
+					}}  />
 			</div>
 
 			<div className="addButton">
-				<button onClick={() => setList([...list, task])}> add </button>
+				<button onClick={addTask}> add </button>
 			</div >
 			
 			<div className="displayList">
 				{list.map((task, index) => (<Display key={index} task={task} index={index} handleRemove={handleRemove} /> ))}
 			</div>
 		</div>
+			
 	);
 };
 
