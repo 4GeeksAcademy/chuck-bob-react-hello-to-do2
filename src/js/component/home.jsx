@@ -16,6 +16,9 @@ const Home = () => {
 	const [view, setView] = useState("login-page")
 	const [username, setUsername] = useState("")
 
+	const [regUsers, setRegUsers] = useState(["George", "Marjorie", "Derek"])
+
+
 	const handleRemove = (indexToRemove) => {
 		setList(list.filter((_, index) => index !== indexToRemove));
 	};
@@ -25,7 +28,7 @@ const Home = () => {
 	return (
 		view !== "login-page" ? (
 		<div className="text-center">{username}
-
+			<div className="todoText">TO DO LIST</div>
 			<div className="todoInput">
 				<input type="text" value={task} onChange={(e) => setTask(e.target.value)} onKeyDown={(e) => {
 						if (e.key === 'Enter') {
@@ -44,7 +47,7 @@ const Home = () => {
 			
 		</div>
 		)
-		: (<LoginPage setUsername={setUsername} setView={setView}/>)
+		: (<LoginPage setUsername={setUsername} setView={setView} registered={regUsers}/>)
 	);
 };
 
