@@ -1,0 +1,77 @@
+
+
+/* Center the entire to-do list */
+.text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    font-family: Arial, sans-serif;
+}
+
+/* Style for the input container */
+.todoInput input {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* Button styling */
+.addButton button, .list button {
+    padding: 8px 12px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.addButton button:hover, .list button:hover {
+    background-color: #218838;
+}
+
+/* Display the to-do list */
+.displayList {
+    width: 300px;
+    margin-top: 20px;
+}
+
+.list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+/* Hover effect for each task item */
+.list:hover {
+    transform: translateY(-3px);
+    background-color: #f1f1f1;
+}
+
+/* Style for the task text */
+.list span {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Remove button for each list item */
+.list button {
+    background-color: #dc3545;
+}
+
+.list button:hover {
+    background-color: #c82333;
+}

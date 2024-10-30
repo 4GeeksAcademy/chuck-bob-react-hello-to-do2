@@ -1,24 +1,38 @@
-import React from "react";
+import React , { useState } from "react";
+import Display from "./display";
+import './Styles.css';
+
+
 
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
 const Home = () => {
+
+	const [list, setList] = useState(["derek"])
+	const [task, setTask] = useState("")
+
+
+	const handleRemove = (indexToRemove) => {
+		setList(list.filter((_, index) => index !== indexToRemove));
+	};
+
+
 	return (
 		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+
+			<div className="todoInput">
+				<input type="text" value={task} onChange={(e) => setTask(e.target.value)} />
+			</div>
+
+			<div className="addButton">
+				<button onClick={() => setList([...list, task])}> add </button>
+			</div >
+			
+			<div className="displayList">
+				{list.map((task, index) => (<Display key={index} task={task} index={index} handleRemove={handleRemove} /> ))}
+			</div>
 		</div>
 	);
 };
