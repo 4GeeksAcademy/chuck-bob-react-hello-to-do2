@@ -25,6 +25,8 @@ const Home = () => {
 
 	const addTask = () => setList([...list, task]);
 
+	
+
 	return (
 		view !== "login-page" ? (
 		<div className="text-center">{username}
