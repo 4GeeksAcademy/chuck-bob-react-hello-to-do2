@@ -19,7 +19,7 @@ const LoginPage = ({ setUsername, setView, registered }) => {
 	return (
 		<div className="welcome-page">
 			<div className="welcome-message">
-				Welcome to the world's fancy list! <br /> Please enter your username and password below:
+				Welcome to the world's fanciest list! <br /> Please enter your username and password below:
 			</div>
 			<div className="username">
 				<label>Username:</label> 

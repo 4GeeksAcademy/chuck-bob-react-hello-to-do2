@@ -10,7 +10,7 @@ let {task,handleRemove,index} = props;
 	
 
 	return (
-		<div className="list">{task}
+		<div className="list">{task.label}
         <button onClick= {()=> handleRemove(index)}>X</button>
         </div>
 	);
